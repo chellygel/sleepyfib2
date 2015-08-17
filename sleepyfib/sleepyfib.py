@@ -14,8 +14,7 @@ class HelloResource:
 
 class FibonacciResource:
 
-    def on_get(self, req, resp, fib_num):
-        sleepy_fib = SleepyFib()
+    def validate_fib(self, fib_num):
 
         try:
             fib_num = int(fib_num)
@@ -28,6 +27,12 @@ class FibonacciResource:
 
         if fib_num <= 0:
             raise falcon.HTTPInvalidParam('Positive Integers Only!', fib_num)
+
+        return fib_num
+
+    def on_get(self, req, resp, fib_num):
+        sleepy_fib = SleepyFib()
+        fib_num = self.validate_fib(fib_num)
 
         fib_list = []
         for i in sleepy_fib.calc_fib(fib_num):

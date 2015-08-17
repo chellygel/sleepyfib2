@@ -1,2 +1,5 @@
 *.pyc
 *.swp
+
+.tox/
+SleepyFib2.egg-info/
