@@ -1,6 +1,7 @@
+from __future__ import absolute_import
 import falcon
 
-from fibonacci import SleepyFib
+from . import fibonacci
 
 
 MAX_FIB = 10000
@@ -31,7 +32,7 @@ class FibonacciResource:
         return fib_num
 
     def on_get(self, req, resp, fib_num):
-        sleepy_fib = SleepyFib()
+        sleepy_fib = fibonacci.SleepyFib()
         fib_num = self.validate_fib(fib_num)
 
         fib_list = []

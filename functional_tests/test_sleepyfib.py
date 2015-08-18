@@ -24,3 +24,9 @@ class SleepyFibFunctionalTest(TestCase):
     def test_returns_400_for_over_max_number(self):
         response = requests.get(self.base_url + 'fib/100000000000')
         self.assertEqual(400, response.status_code)
+
+    def test_hello(self):
+        response = requests.get(self.base_url + 'hello')
+        self.assertEqual(200, response.status_code)
+        content = 'Hello! Welcome to sleepyfib! \n'
+        self.assertEqual(content, response.content)

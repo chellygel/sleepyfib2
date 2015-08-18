@@ -1,3 +1,4 @@
+from six.moves import xrange
 
 
 class SleepyFib:

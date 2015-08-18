@@ -1,7 +1,6 @@
 import unittest
 
 import falcon
-from itertools import islice
 
 from sleepyfib.sleepyfib import FibonacciResource, MAX_FIB
 
