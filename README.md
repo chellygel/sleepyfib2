@@ -64,7 +64,9 @@ curl localhost:8000/hello
 
 In order to run the tests you must have the test requirements installed!
 
-To kick the tests off, use py.test or tox.
+To kick the tests off, use py.test or tox. Here is an example of specifying
+the tests to just version 27. (The tox tests are set up to also support version
+3.4 as well as a python pep8 checker, flake8)
 
 <pre>
 tox -e py27
